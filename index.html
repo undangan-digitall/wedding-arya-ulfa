@@ -3,44 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Undangan Pernikahan | Arya & Kirana | Luxury Cinematic</title>
+    <meta name="theme-color" content="#050302">
+    <meta name="description" content="Undangan Pernikahan Arya & Kirana - Dark Luxury Wedding">
+    <title>Arya & Kirana | The Grand Wedding | 8-12 Juli 2026</title>
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Curated Premium Selection -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Great+Vibes&family=Cinzel:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    <!-- AOS Library -->
+    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <style>
-        * {
+        /* ============================================
+           CSS CUSTOM PROPERTIES - REFINED PALETTE
+           ============================================ */
+        :root {
+            /* Primary Gold Palette */
+            --gold-100: #fef3c7;
+            --gold-200: #fde68a;
+            --gold-300: #fcd34d;
+            --gold-400: #fbbf24;
+            --gold-500: #d4af37;
+            --gold-600: #b8941f;
+            --gold-700: #947310;
+            --gold-800: #6b4f08;
+            --gold-900: #4a3304;
+            
+            /* Rose Gold Accent */
+            --rose-gold: #c9a84c;
+            --rose-gold-light: #e0c876;
+            --rose-gold-dark: #a88830;
+            
+            /* Dark Theme */
+            --dark-abyss: #020101;
+            --dark-void: #050302;
+            --dark-ebony: #0a0705;
+            --dark-charcoal: #0f0c0a;
+            --dark-slate: #1a1612;
+            --dark-shadow: #25201b;
+            
+            /* Glass Morphism */
+            --glass-1: rgba(10, 7, 5, 0.45);
+            --glass-2: rgba(15, 12, 10, 0.55);
+            --glass-3: rgba(20, 16, 14, 0.65);
+            --glass-4: rgba(25, 20, 18, 0.75);
+            --glass-5: rgba(30, 25, 22, 0.85);
+            
+            /* Text */
+            --text-primary: #e8e0d0;
+            --text-secondary: #c9c1b0;
+            --text-tertiary: #a09888;
+            --text-muted: #807868;
+            
+            /* Borders */
+            --border-subtle: rgba(212, 175, 55, 0.15);
+            --border-soft: rgba(212, 175, 55, 0.25);
+            --border-medium: rgba(212, 175, 55, 0.4);
+            --border-prominent: rgba(212, 175, 55, 0.6);
+            --border-solid: rgba(212, 175, 55, 0.8);
+            
+            /* Shadows */
+            --shadow-card: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            --shadow-card-hover: 0 35px 60px -15px rgba(0, 0, 0, 0.6), 0 0 40px rgba(212, 175, 55, 0.08);
+            --shadow-glow-gold: 0 0 30px rgba(212, 175, 55, 0.2);
+            --shadow-glow-gold-strong: 0 0 50px rgba(212, 175, 55, 0.35);
+            --shadow-elevated: 0 40px 80px -20px rgba(0, 0, 0, 0.7);
+            
+            /* Transitions */
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-in-out-circ: cubic-bezier(0.85, 0, 0.15, 1);
+            --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            
+            /* Spacing */
+            --section-padding: clamp(60px, 10vw, 100px);
+            --card-padding: clamp(25px, 5vw, 50px);
+            --container-max: 1200px;
+        }
+
+        /* ============================================
+           CSS RESET & BASE
+           ============================================ */
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #0a0806;
-            color: #e8e2d4;
-            line-height: 1.6;
-            overflow-x: hidden;
+        html {
             scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            font-size: 16px;
         }
 
-        /* Parallax Background */
-        .parallax-bg {
+        body {
+            font-family: 'Lora', 'Georgia', serif;
+            background-color: var(--dark-abyss);
+            color: var(--text-primary);
+            line-height: 1.75;
+            overflow-x: hidden;
+            letter-spacing: 0.01em;
+            min-height: 100vh;
+            min-height: 100dvh;
+        }
+
+        /* ============================================
+           TYPOGRAPHY SYSTEM
+           ============================================ */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+        }
+
+        .font-display { font-family: 'Playfair Display', 'Times New Roman', serif; }
+        .font-cinzel { font-family: 'Cinzel', 'Times New Roman', serif; }
+        .font-script { font-family: 'Great Vibes', 'Brush Script MT', cursive; }
+        .font-body { font-family: 'Lora', 'Georgia', serif; }
+        .font-sans { font-family: 'Montserrat', 'Helvetica Neue', sans-serif; }
+
+        /* ============================================
+           GOLD TEXT - REFINED GRADIENT
+           ============================================ */
+        .gold-text {
+            background: linear-gradient(
+                135deg,
+                var(--gold-700) 0%,
+                var(--gold-500) 25%,
+                var(--gold-200) 50%,
+                var(--gold-400) 75%,
+                var(--gold-600) 100%
+            );
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: goldFlow 8s ease infinite;
+        }
+
+        .gold-text-static {
+            background: linear-gradient(135deg, var(--gold-500), var(--gold-200), var(--gold-600));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gold-text-subtle {
+            background: linear-gradient(135deg, var(--gold-600), var(--rose-gold), var(--gold-500));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        @keyframes goldFlow {
+            0%, 100% { background-position: 0% 50%; }
+            25% { background-position: 100% 0%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 100%; }
+        }
+
+        /* ============================================
+           SELECTION STYLING
+           ============================================ */
+        ::selection {
+            background: rgba(212, 175, 55, 0.3);
+            color: var(--gold-200);
+        }
+
+        ::-moz-selection {
+            background: rgba(212, 175, 55, 0.3);
+            color: var(--gold-200);
+        }
+
+        /* ============================================
+           CUSTOM SCROLLBAR - LUXURY
+           ============================================ */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: linear-gradient(180deg, var(--dark-abyss), var(--dark-ebony));
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--gold-700), var(--gold-500), var(--gold-700));
+            border-radius: 10px;
+            border: 1px solid var(--border-subtle);
+            transition: all 0.3s ease;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--gold-500), var(--gold-300), var(--gold-500));
+            border-color: var(--border-soft);
+        }
+
+        /* ============================================
+           BACKGROUND SYSTEM - MULTI-LAYER
+           ============================================ */
+        .bg-system {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100vh;
-            z-index: -2;
+            height: 100%;
+            pointer-events: none;
+            z-index: -10;
         }
-        
-        .parallax-layer {
+
+        .bg-image-layer {
             position: absolute;
             top: 0;
             left: 0;
@@ -50,776 +234,2513 @@
             background-position: center;
             background-repeat: no-repeat;
             opacity: 0;
-            transition: opacity 1.2s ease-in-out;
+            transition: opacity 2.5s var(--ease-in-out-circ);
+            will-change: opacity;
         }
-        
-        .parallax-layer.active { opacity: 1; }
-        
-        .bg-overlay {
+
+        .bg-image-layer.active {
+            opacity: 1;
+        }
+
+        .bg-image-layer.fading {
+            opacity: 0.35;
+        }
+
+        .bg-gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                165deg,
+                rgba(2, 1, 1, 0.85) 0%,
+                rgba(5, 3, 2, 0.88) 25%,
+                rgba(8, 6, 4, 0.9) 50%,
+                rgba(10, 7, 5, 0.88) 75%,
+                rgba(2, 1, 1, 0.85) 100%
+            );
+        }
+
+        .bg-vignette {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                ellipse at center,
+                transparent 35%,
+                rgba(0, 0, 0, 0.5) 70%,
+                rgba(0, 0, 0, 0.8) 100%
+            );
+        }
+
+        .bg-noise {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        /* ============================================
+           PARTICLE CANVAS
+           ============================================ */
+        #particle-canvas {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100vh;
-            background: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.5) 100%);
-            z-index: -1;
+            height: 100%;
             pointer-events: none;
+            z-index: -5;
+            opacity: 0.4;
         }
 
-        h1, h2, h3, .serif { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
-        .gold-text {
-            background: linear-gradient(135deg, #d4af37, #f9e08c, #b58d2b);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: #1e1a14; }
-        ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 10px; }
-
-        /* COVER PAGE */
+        /* ============================================
+           COVER PAGE - ULTRA LUXURY
+           ============================================ */
         #cover-page {
             position: fixed;
-            top: 0;
-            left: 0;
+            inset: 0;
             width: 100%;
             height: 100vh;
-            background: radial-gradient(circle at center, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.92) 100%), url('assets/fotobackground.jpeg') center/cover;
-            color: #fff;
+            height: 100dvh;
+            background: 
+                radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.7) 0%, rgba(2,1,1,0.95) 100%),
+                url('assets/fotobackground.jpeg') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             z-index: 10000;
-            transition: opacity 1s ease, transform 1s ease;
+            transition: all 1.6s var(--ease-out-expo);
+            will-change: transform, opacity;
         }
 
-        .ornament-gold { font-size: 2rem; letter-spacing: 20px; color: #d4af37; margin-bottom: 15px; animation: fadeInDown 1s ease; }
-        #cover-page h1 { font-size: 4rem; font-weight: 600; animation: fadeInUp 1s ease; }
-        .guest-box-lux {
-            margin: 30px 0;
-            padding: 20px 35px;
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(12px);
-            border-radius: 60px;
-            border: 1px solid rgba(212,175,55,0.4);
-            animation: fadeInUp 1.2s ease;
-        }
-        .guest-box-lux h2 { font-size: 1.8rem; color: #f9e08c; }
-        .btn-open-lux {
-            padding: 14px 45px;
-            background: linear-gradient(45deg, #d4af37, #b58d2b);
-            color: #1e1a14;
-            border: none;
-            border-radius: 50px;
-            font-size: 15px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            margin-top: 15px;
-            animation: pulse 2s infinite;
+        #cover-page.exit {
+            opacity: 0;
+            transform: translateY(-105%);
+            pointer-events: none;
+            transition: all 1.8s var(--ease-in-out-circ);
         }
 
-        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes pulse { 0%, 100% { transform: scale(1); box-shadow: 0 5px 20px rgba(212,175,55,0.4); } 50% { transform: scale(1.03); box-shadow: 0 8px 30px rgba(212,175,55,0.7); } }
-
-        /* MAIN CONTENT */
-        #main-content { opacity: 0; transition: opacity 1.5s ease; position: relative; z-index: 2; }
-
-        .section-lux {
-            padding: 80px 20px;
-            text-align: center;
-            background: rgba(10, 8, 6, 0.75);
-            backdrop-filter: blur(8px);
-            margin: 20px 15px;
-            border-radius: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            border: 1px solid rgba(212,175,55,0.2);
-        }
-
-        .section-title-lux {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
+        .cover-inner {
             position: relative;
-            display: inline-block;
-            color: #e8e2d4;
+            z-index: 2;
+            padding: clamp(20px, 5vw, 50px);
+            max-width: 700px;
+            width: 90%;
         }
-        .section-title-lux:after {
+
+        /* Ornament Decorative */
+        .ornament-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .ornament-line {
+            width: clamp(40px, 8vw, 90px);
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-500), transparent);
+        }
+
+        .ornament-dot {
+            width: 4px;
+            height: 4px;
+            background: var(--gold-500);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--gold-500);
+            animation: ornamentPulse 2s ease-in-out infinite;
+        }
+
+        .ornament-dot:nth-child(2) { animation-delay: 0.4s; }
+        .ornament-dot:nth-child(3) { animation-delay: 0.8s; }
+        .ornament-dot:nth-child(4) { animation-delay: 1.2s; }
+
+        @keyframes ornamentPulse {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.8); }
+        }
+
+        .cover-badge {
+            font-size: clamp(10px, 1.5vw, 12px);
+            letter-spacing: 0.8em;
+            color: var(--gold-500);
+            text-transform: uppercase;
+            font-weight: 300;
+            margin-bottom: 20px;
+            font-family: 'Cinzel', 'Times New Roman', serif;
+            animation: fadeDown 1.2s var(--ease-out-back);
+        }
+
+        .cover-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            animation: fadeUp 1.2s var(--ease-out-back);
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+            text-shadow: 0 0 80px rgba(212, 175, 55, 0.3), 0 4px 30px rgba(0,0,0,0.8);
+            margin: 10px 0;
+        }
+
+        .cover-title .ampersand {
+            font-family: 'Great Vibes', 'Brush Script MT', cursive;
+            font-size: 0.7em;
+            color: var(--gold-400);
+            display: inline-block;
+            margin: 0 0.15em;
+            animation: floatGentle 3s ease-in-out infinite;
+            text-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+        }
+
+        @keyframes floatGentle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Guest Box */
+        .guest-box {
+            margin: 35px auto;
+            padding: clamp(20px, 4vw, 35px) clamp(30px, 8vw, 70px);
+            background: rgba(5, 3, 2, 0.6);
+            backdrop-filter: blur(30px) saturate(180%);
+            -webkit-backdrop-filter: blur(30px) saturate(180%);
+            border-radius: 80px;
+            border: 1px solid var(--border-medium);
+            box-shadow: 
+                0 25px 60px rgba(0,0,0,0.5),
+                inset 0 1px 0 rgba(255,255,255,0.03),
+                inset 0 0 30px rgba(212,175,55,0.03);
+            position: relative;
+            overflow: hidden;
+            animation: fadeUp 1.4s var(--ease-out-back);
+        }
+
+        .guest-box::before {
             content: '';
             position: absolute;
-            bottom: -12px;
+            inset: -1px;
+            border-radius: 80px;
+            padding: 1px;
+            background: linear-gradient(
+                135deg,
+                transparent 20%,
+                rgba(212,175,55,0.3) 40%,
+                rgba(249,224,140,0.5) 50%,
+                rgba(212,175,55,0.3) 60%,
+                transparent 80%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: borderShine 4s ease-in-out infinite;
+        }
+
+        @keyframes borderShine {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .guest-box-inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        .guest-label-text {
+            font-size: 11px;
+            letter-spacing: 0.4em;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            font-weight: 400;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .guest-name-display {
+            font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+            color: var(--gold-200);
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+
+        .guest-note {
+            font-size: 9px;
+            margin-top: 12px;
+            opacity: 0.5;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+        }
+
+        /* CTA Button */
+        .btn-open {
+            padding: clamp(14px, 2vw, 20px) clamp(40px, 8vw, 70px);
+            background: linear-gradient(135deg, var(--gold-700), var(--gold-500), var(--gold-300));
+            color: var(--dark-abyss);
+            border: none;
+            border-radius: 60px;
+            font-size: clamp(12px, 1.5vw, 14px);
+            font-weight: 700;
+            letter-spacing: 0.35em;
+            cursor: pointer;
+            transition: all 0.5s var(--ease-out-expo);
+            margin-top: 25px;
+            animation: btnPulse 3s ease-in-out infinite;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            box-shadow: 
+                0 15px 45px rgba(212,175,55,0.35),
+                0 0 0 1px rgba(212,175,55,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-open::after {
+            content: '';
+            position: absolute;
+            top: -60%;
+            left: -60%;
+            width: 50%;
+            height: 220%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,0.25),
+                transparent
+            );
+            transform: rotate(25deg);
+            animation: btnShimmer 3.5s ease-in-out infinite;
+        }
+
+        @keyframes btnShimmer {
+            0%, 100% { left: -60%; }
+            50% { left: 120%; }
+        }
+
+        @keyframes btnPulse {
+            0%, 100% { 
+                transform: scale(1); 
+                box-shadow: 0 15px 45px rgba(212,175,55,0.35);
+            }
+            50% { 
+                transform: scale(1.03); 
+                box-shadow: 0 20px 55px rgba(212,175,55,0.55), 0 0 80px rgba(212,175,55,0.2);
+            }
+        }
+
+        .btn-open:hover {
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 
+                0 20px 55px rgba(212,175,55,0.55),
+                0 0 90px rgba(212,175,55,0.25);
+            letter-spacing: 0.45em;
+        }
+
+        .btn-open:active {
+            transform: translateY(-1px) scale(0.98);
+            transition: all 0.1s ease;
+        }
+
+        /* ============================================
+           MAIN CONTENT
+           ============================================ */
+        #main-content {
+            opacity: 0;
+            transition: opacity 2s var(--ease-in-out-circ);
+            position: relative;
+            z-index: 2;
+        }
+
+        #main-content.revealed {
+            opacity: 1;
+        }
+
+        /* ============================================
+           GLASS CARDS - REFINED
+           ============================================ */
+        .glass-section {
+            padding: var(--section-padding) clamp(15px, 3vw, 30px);
+            text-align: center;
+            margin: clamp(20px, 4vw, 50px) clamp(10px, 3vw, 25px);
+            border-radius: clamp(40px, 8vw, 90px);
+            background: var(--glass-2);
+            backdrop-filter: blur(25px) saturate(160%);
+            -webkit-backdrop-filter: blur(25px) saturate(160%);
+            border: 1px solid var(--border-subtle);
+            box-shadow: 
+                var(--shadow-card),
+                inset 0 1px 0 rgba(255,255,255,0.02);
+            transition: all 0.7s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                transparent 10%,
+                var(--border-soft) 30%,
+                var(--border-prominent) 50%,
+                var(--border-soft) 70%,
+                transparent 90%
+            );
+            opacity: 0;
+            transition: opacity 0.7s ease;
+        }
+
+        .glass-section:hover::before {
+            opacity: 1;
+        }
+
+        .glass-section:hover {
+            border-color: var(--border-soft);
+            box-shadow: 
+                var(--shadow-card-hover),
+                inset 0 1px 0 rgba(255,255,255,0.03);
+            transform: translateY(-2px);
+        }
+
+        /* ============================================
+           SECTION HEADERS
+           ============================================ */
+        .section-eyebrow {
+            font-size: clamp(10px, 1.3vw, 12px);
+            letter-spacing: 0.5em;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            font-weight: 400;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            margin-bottom: 35px;
+            position: relative;
+            display: inline-block;
+            color: var(--gold-400);
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
             left: 20%;
             width: 60%;
             height: 2px;
-            background: linear-gradient(90deg, transparent, #d4af37, #b58d2b, transparent);
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--gold-500) 20%,
+                var(--gold-200) 50%,
+                var(--gold-500) 80%,
+                transparent
+            );
         }
 
-        .hero-lux {
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero-section {
             min-height: 100vh;
+            min-height: 100dvh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: white;
             padding: 40px 20px;
-        }
-        .hero-lux h1 { font-size: 4rem; text-shadow: 0 2px 20px rgba(0,0,0,0.5); }
-        .floating-icon { animation: float 3s ease-in-out infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
-
-        /* Couple Cards */
-        .couple-lux { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 40px; }
-        .card-person-lux {
-            background: rgba(20, 18, 16, 0.9);
-            backdrop-filter: blur(4px);
-            padding: 30px 20px;
-            width: 280px;
-            border-radius: 30px;
-            box-shadow: 0 25px 45px rgba(0,0,0,0.3);
-            transition: all 0.5s;
-            border-bottom: 4px solid #d4af37;
-            color: #e8e2d4;
-        }
-        .card-person-lux:hover { transform: translateY(-15px) scale(1.02); border-bottom-color: #f9e08c; }
-        .photo-frame {
-            width: 170px;
-            height: 170px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            overflow: hidden;
-            border: 3px solid #d4af37;
-        }
-        .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
-        .card-person-lux h3 { color: #d4af37; font-size: 1.8rem; }
-
-        /* Event Cards */
-        .event-grid-lux { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 40px; }
-        .event-card-gold {
-            background: rgba(20, 18, 16, 0.85);
-            backdrop-filter: blur(4px);
-            padding: 35px 25px;
-            border-radius: 35px;
-            width: 320px;
-            border: 1px solid rgba(212,175,55,0.4);
-            transition: all 0.4s;
-            color: #e8e2d4;
-        }
-        .event-card-gold:hover { transform: translateY(-8px) scale(1.02); border-color: #d4af37; background: rgba(30, 26, 20, 0.9); }
-        .event-card-gold h3 { color: #d4af37; }
-        .btn-map-lux {
-            display: inline-block;
-            margin-top: 15px;
-            background: #d4af37;
-            color: #1e1a14;
-            padding: 8px 20px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-        .btn-map-lux:hover { background: #f9e08c; transform: scale(1.02); }
-
-        /* Gallery Slider */
-        .gallery-lux { padding: 80px 20px; text-align: center; }
-        .slider-container {
             position: relative;
-            width: 100%;
-            max-width: 500px;
-            margin: 40px auto;
-            overflow: hidden;
-            border-radius: 30px;
-            box-shadow: 0 25px 45px rgba(212,175,55,0.25);
-            aspect-ratio: 4 / 5;
         }
-        .slider-wrapper { position: relative; width: 100%; height: 100%; }
-        .slider-slide {
+
+        .hero-title {
+            font-size: clamp(3rem, 7vw, 6rem);
+            text-shadow: 0 4px 80px rgba(0,0,0,0.9);
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+            letter-spacing: 0.04em;
+            margin-bottom: 20px;
+        }
+
+        .hero-date-text {
+            font-size: clamp(1rem, 1.8vw, 1.3rem);
+            letter-spacing: 0.3em;
+            color: var(--text-secondary);
+            font-weight: 300;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .hero-date-text i {
+            color: var(--gold-500);
+            margin: 0 8px;
+        }
+
+        .hero-date-text .separator {
+            color: var(--gold-500);
+            margin: 0 12px;
+        }
+
+        /* ============================================
+           COUNTDOWN - PRECISION DESIGN
+           ============================================ */
+        .countdown-grid {
+            display: flex;
+            justify-content: center;
+            gap: clamp(12px, 2.5vw, 35px);
+            flex-wrap: wrap;
+            margin-top: clamp(35px, 6vw, 60px);
+        }
+
+        .countdown-item {
+            background: rgba(5, 3, 2, 0.7);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            padding: clamp(20px, 3vw, 35px) clamp(18px, 3vw, 35px);
+            border-radius: clamp(25px, 4vw, 45px);
+            min-width: clamp(70px, 12vw, 130px);
+            border: 1px solid var(--border-subtle);
+            position: relative;
+            transition: all 0.5s var(--ease-out-expo);
+        }
+
+        .countdown-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 15%;
+            width: 70%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold-500), transparent);
+        }
+
+        .countdown-item:hover {
+            border-color: var(--border-medium);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-glow-gold);
+            background: rgba(10, 7, 5, 0.8);
+        }
+
+        .countdown-value {
+            font-size: clamp(2rem, 4.5vw, 3.8rem);
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+            font-weight: 700;
+            color: var(--gold-200);
+            display: block;
+            line-height: 1;
+            letter-spacing: 0.02em;
+        }
+
+        .countdown-label {
+            font-size: clamp(0.6rem, 0.9vw, 0.7rem);
+            letter-spacing: 0.4em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+        }
+
+        /* ============================================
+           COUPLE CARDS - ELEVATED
+           ============================================ */
+        .couple-grid {
+            display: flex;
+            justify-content: center;
+            gap: clamp(30px, 6vw, 70px);
+            flex-wrap: wrap;
+            margin-top: clamp(40px, 7vw, 80px);
+        }
+
+        .couple-card {
+            background: var(--glass-3);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: clamp(30px, 5vw, 50px) clamp(25px, 4vw, 40px);
+            width: clamp(280px, 35vw, 380px);
+            border-radius: clamp(50px, 8vw, 80px);
+            transition: all 0.7s var(--ease-out-expo);
+            border: 1px solid var(--border-subtle);
+            box-shadow: var(--shadow-card);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .couple-card::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(
+                135deg,
+                transparent 30%,
+                var(--border-medium) 50%,
+                transparent 70%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.7s ease;
+        }
+
+        .couple-card:hover::before {
+            opacity: 1;
+        }
+
+        .couple-card:hover {
+            transform: translateY(-20px) scale(1.02);
+            border-color: var(--border-soft);
+            box-shadow: var(--shadow-elevated), var(--shadow-glow-gold);
+            background: var(--glass-4);
+        }
+
+        .couple-photo {
+            width: clamp(160px, 20vw, 230px);
+            height: clamp(160px, 20vw, 230px);
+            border-radius: 50%;
+            margin: 0 auto clamp(20px, 3vw, 35px);
+            overflow: hidden;
+            border: 4px solid var(--gold-500);
+            box-shadow: 
+                0 20px 40px rgba(0,0,0,0.5),
+                0 0 35px rgba(212,175,55,0.15);
+            position: relative;
+            transition: all 0.6s var(--ease-out-expo);
+        }
+
+        .couple-photo::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 1px dashed var(--border-soft);
+            animation: rotateSlow 30s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes rotateSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .couple-card:hover .couple-photo {
+            border-color: var(--gold-300);
+            box-shadow: 
+                0 25px 50px rgba(0,0,0,0.6),
+                0 0 50px rgba(212,175,55,0.25);
+            transform: scale(1.03);
+        }
+
+        .couple-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.9s var(--ease-out-expo);
+        }
+
+        .couple-card:hover .couple-photo img {
+            transform: scale(1.08);
+        }
+
+        .couple-name {
+            color: var(--gold-200);
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: 0.03em;
+        }
+
+        .couple-parents {
+            color: var(--text-tertiary);
+            font-size: clamp(0.75rem, 1vw, 0.85rem);
+            line-height: 1.8;
+        }
+
+        .couple-parents strong {
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .couple-social {
+            margin-top: 18px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .couple-social a {
+            color: var(--gold-500);
+            font-size: 1.3rem;
+            transition: all 0.4s var(--ease-out-back);
+            opacity: 0.7;
+        }
+
+        .couple-social a:hover {
+            color: var(--gold-200);
+            opacity: 1;
+            transform: translateY(-5px);
+        }
+
+        /* ============================================
+           QUOTE BLOCK
+           ============================================ */
+        .quote-block {
+            max-width: 750px;
+            margin: 0 auto 45px;
+            font-style: italic;
+            color: var(--gold-400);
+            font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+            line-height: 1.9;
+            font-family: 'Lora', 'Georgia', serif;
+            font-weight: 400;
+            padding: 25px 30px;
+            border-left: 3px solid var(--gold-500);
+            border-right: 3px solid var(--gold-500);
+            letter-spacing: 0.02em;
+        }
+
+        .quote-block .quote-source {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            margin-top: 12px;
+            font-style: normal;
+            letter-spacing: 0.1em;
+        }
+
+        /* ============================================
+           EVENT CARDS - SOPHISTICATED
+           ============================================ */
+        .event-grid {
+            display: flex;
+            justify-content: center;
+            gap: clamp(20px, 3.5vw, 40px);
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .event-card {
+            background: var(--glass-4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: clamp(30px, 5vw, 50px) clamp(20px, 3vw, 35px);
+            border-radius: clamp(45px, 7vw, 65px);
+            width: clamp(280px, 32vw, 380px);
+            transition: all 0.7s var(--ease-out-expo);
+            border: 1px solid var(--border-subtle);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: var(--shadow-card);
+        }
+
+        .event-card::after {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold-500), transparent);
             opacity: 0;
-            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 30px;
-            overflow: hidden;
-        }
-        .slider-slide.active { opacity: 1; z-index: 1; }
-        .slider-slide img { width: 100%; height: 100%; object-fit: cover; transition: transform 6s ease; }
-        .slider-slide.active img { transform: scale(1.05); }
-        .slider-dots { display: flex; justify-content: center; gap: 12px; margin-top: 25px; }
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.4);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .dot.active { background: #d4af37; width: 28px; border-radius: 10px; }
-
-        /* Countdown */
-        .countdown-lux { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
-        .time-lux {
-            background: rgba(20, 18, 16, 0.9);
-            backdrop-filter: blur(4px);
-            padding: 18px 22px;
-            border-radius: 20px;
-            min-width: 85px;
-            border-bottom: 3px solid #d4af37;
-        }
-        .time-lux span { font-size: 2.5rem; font-family: 'Cormorant Garamond', serif; font-weight: 700; color: #f9e08c; }
-
-        /* Gift Card */
-        .gift-card-lux {
-            max-width: 500px;
-            margin: 0 auto;
-            background: rgba(20, 18, 16, 0.9);
-            backdrop-filter: blur(8px);
-            padding: 40px 30px;
-            border-radius: 50px;
-            border: 1px solid rgba(212,175,55,0.3);
-        }
-        .rekening-number {
-            background: rgba(10, 8, 6, 0.7);
-            padding: 15px;
-            border-radius: 40px;
-            margin: 20px 0;
-            font-family: monospace;
-            font-size: 1.2rem;
-            border: 1px solid rgba(212,175,55,0.3);
-            color: #f9e08c;
-        }
-        .btn-gold {
-            background: linear-gradient(45deg, #d4af37, #b58d2b);
-            border: none;
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-weight: 600;
-            cursor: pointer;
-            color: #1e1a14;
+            transition: opacity 0.5s ease;
         }
 
-        /* RSVP Form */
-        .rsvp-form {
-            max-width: 550px;
-            margin: 30px auto 0;
-            background: rgba(20, 18, 16, 0.9);
-            backdrop-filter: blur(8px);
-            padding: 35px;
-            border-radius: 40px;
-            border: 1px solid rgba(212,175,55,0.3);
+        .event-card:hover::after {
+            opacity: 1;
         }
-        .form-group { margin-bottom: 20px; text-align: left; }
-        .form-group label { display: block; margin-bottom: 8px; color: #d4af37; font-size: 14px; }
-        input, select, textarea {
-            width: 100%;
-            padding: 14px 18px;
-            border-radius: 30px;
-            border: 1px solid rgba(212,175,55,0.3);
-            background: rgba(10, 8, 6, 0.7);
-            color: #e8e2d4;
-            font-family: 'Montserrat', sans-serif;
+
+        .event-card:hover {
+            transform: translateY(-18px) scale(1.03);
+            border-color: var(--border-medium);
+            box-shadow: var(--shadow-elevated), var(--shadow-glow-gold);
+            background: var(--glass-5);
         }
-        input:focus, select:focus, textarea:focus { outline: none; border-color: #d4af37; }
-        .btn-submit {
-            background: linear-gradient(45deg, #d4af37, #b58d2b);
-            color: #1e1a14;
-            padding: 14px 30px;
-            border-radius: 40px;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            font-size: 16px;
+
+        .event-icon {
+            font-size: clamp(40px, 6vw, 60px);
+            color: var(--gold-500);
+            margin-bottom: 25px;
+            transition: all 0.6s var(--ease-out-back);
         }
-        .wishes-list {
-            max-width: 700px;
-            margin: 40px auto 0;
-            background: rgba(20, 18, 16, 0.7);
-            border-radius: 40px;
-            padding: 25px;
-            max-height: 350px;
-            overflow-y: auto;
+
+        .event-card:hover .event-icon {
+            transform: scale(1.2) rotate(-5deg);
+            color: var(--gold-300);
         }
-        .wish-item {
-            background: rgba(10, 8, 6, 0.8);
-            border-radius: 25px;
-            padding: 15px 20px;
+
+        .event-title {
+            font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+            color: var(--gold-200);
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
             margin-bottom: 15px;
-            text-align: left;
-            border-left: 3px solid #d4af37;
+            letter-spacing: 0.03em;
         }
-        .wish-name { color: #d4af37; font-weight: 600; margin-bottom: 5px; }
-        .wish-message { color: #c4bcab; font-size: 14px; }
-        .wish-status { font-size: 11px; color: #888; margin-top: 5px; }
 
-        /* Buttons */
-        .auto-scroll-btn {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            background: #d4af37;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+        .event-date {
+            font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+            font-weight: 600;
+            color: var(--gold-300);
+            margin: 15px 0;
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+        }
+
+        .event-detail-row {
+            color: var(--text-secondary);
+            font-size: clamp(0.8rem, 1.1vw, 0.9rem);
+            margin: 10px 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            z-index: 99;
-            border: none;
-            color: #1e1a14;
-            font-size: 20px;
+            gap: 10px;
         }
-        #music-btn-lux {
-            position: fixed;
-            bottom: 30px;
-            right: 20px;
-            width: 55px;
-            height: 55px;
-            background: radial-gradient(circle, #d4af37, #b58d2b);
-            border-radius: 50%;
-            border: none;
-            font-size: 22px;
-            cursor: pointer;
-            z-index: 999;
-            animation: pulse 2s infinite;
-            color: #1e1a14;
-        }
-        footer {
-            background: rgba(10, 8, 6, 0.9);
-            color: #aaa;
-            padding: 30px;
+
+        .event-detail-row i {
+            color: var(--gold-500);
+            width: 18px;
             text-align: center;
-            font-size: 12px;
+            font-size: 0.9em;
+        }
+
+        .event-address {
+            font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+            color: var(--text-muted);
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        .btn-event {
+            display: inline-block;
+            margin-top: 28px;
+            background: linear-gradient(135deg, var(--gold-700), var(--gold-500), var(--gold-400));
+            color: var(--dark-abyss);
+            padding: clamp(10px, 1.5vw, 14px) clamp(25px, 3.5vw, 38px);
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: clamp(11px, 1.2vw, 13px);
+            font-weight: 700;
+            transition: all 0.5s var(--ease-out-expo);
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 8px 25px rgba(212,175,55,0.2);
+        }
+
+        .btn-event:hover {
+            transform: scale(1.06);
+            letter-spacing: 0.25em;
+            box-shadow: 0 15px 40px rgba(212,175,55,0.4);
+            background: linear-gradient(135deg, var(--gold-600), var(--gold-400), var(--gold-200));
+        }
+
+        /* ============================================
+           GALLERY - REFINED
+           ============================================ */
+        .gallery-section {
+            padding: var(--section-padding) 20px;
+            background: linear-gradient(180deg, var(--dark-abyss), var(--dark-ebony), var(--dark-abyss));
+            text-align: center;
+            position: relative;
+        }
+
+        .gallery-section::before,
+        .gallery-section::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+        }
+
+        .gallery-section::before {
+            top: 0;
+            background: linear-gradient(90deg, transparent, var(--border-soft), transparent);
+        }
+
+        .gallery-section::after {
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, var(--border-soft), transparent);
+        }
+
+        .swiper-container {
+            width: 100%;
+            max-width: 580px;
+            margin: 55px auto;
+            border-radius: 55px;
+            overflow: hidden;
+            box-shadow: 
+                0 35px 70px rgba(0,0,0,0.6),
+                0 0 0 4px var(--border-subtle);
+            transition: all 0.6s ease;
+        }
+
+        .swiper-container:hover {
+            box-shadow: 
+                0 35px 70px rgba(0,0,0,0.6),
+                0 0 0 4px var(--border-soft),
+                0 0 60px rgba(212,175,55,0.1);
+        }
+
+        .swiper-slide {
+            aspect-ratio: 4 / 5;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s var(--ease-out-expo);
+        }
+
+        .swiper-slide:hover img {
+            transform: scale(1.06);
+        }
+
+        .swiper-pagination-bullet {
+            background: rgba(255,255,255,0.4) !important;
+            width: 10px !important;
+            height: 10px !important;
+            opacity: 0.5 !important;
+            transition: all 0.4s ease !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--gold-500) !important;
+            opacity: 1 !important;
+            width: 32px !important;
+            border-radius: 6px !important;
+        }
+
+        /* ============================================
+           RSVP FORM - ELEGANT
+           ============================================ */
+        .rsvp-form {
+            max-width: 680px;
+            margin: 0 auto;
+            background: var(--glass-4);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            padding: clamp(30px, 5vw, 55px) clamp(25px, 4vw, 50px);
+            border-radius: clamp(50px, 8vw, 75px);
+            border: 1px solid var(--border-soft);
+            box-shadow: var(--shadow-card);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: clamp(14px, 1.8vw, 18px) clamp(16px, 2vw, 24px);
+            border-radius: 50px;
+            border: 1px solid var(--border-subtle);
+            background: rgba(5, 3, 2, 0.6);
+            color: var(--text-primary);
+            font-family: 'Lora', 'Georgia', serif;
+            font-size: clamp(13px, 1.2vw, 15px);
+            transition: all 0.4s var(--ease-out-expo);
+            outline: none;
+            letter-spacing: 0.02em;
+        }
+
+        .form-textarea {
+            border-radius: 30px;
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--border-medium);
+            box-shadow: 
+                0 0 30px rgba(212,175,55,0.2),
+                inset 0 0 20px rgba(212,175,55,0.03);
+            background: rgba(10, 7, 5, 0.7);
+        }
+
+        .form-select option {
+            background: var(--dark-slate);
+            color: var(--text-primary);
+            padding: 10px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: clamp(14px, 1.8vw, 18px);
+            background: linear-gradient(135deg, var(--gold-700), var(--gold-500), var(--gold-300));
+            color: var(--dark-abyss);
+            border: none;
+            border-radius: 50px;
+            font-size: clamp(12px, 1.3vw, 14px);
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            cursor: pointer;
+            transition: all 0.5s var(--ease-out-expo);
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            box-shadow: 0 8px 30px rgba(212,175,55,0.2);
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 45px rgba(212,175,55,0.4);
+            letter-spacing: 0.3em;
+        }
+
+        .btn-submit:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        /* Wishes Container */
+        .wishes-title {
+            margin-top: 55px;
+            color: var(--gold-400);
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            letter-spacing: 0.03em;
+        }
+
+        .wishes-container {
+            max-width: 750px;
+            margin: 40px auto 0;
+            max-height: 420px;
+            overflow-y: auto;
+            padding: 15px;
+            scroll-behavior: smooth;
+        }
+
+        .wish-card {
+            background: var(--glass-3);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 35px;
+            padding: 20px 28px;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--gold-500);
+            text-align: left;
+            transition: all 0.4s var(--ease-out-expo);
+            animation: slideInRight 0.6s var(--ease-out-back);
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .wish-card:hover {
+            border-left-color: var(--gold-300);
+            background: var(--glass-4);
+            transform: translateX(10px);
+            box-shadow: var(--shadow-card);
+        }
+
+        .wish-card .wish-name {
+            color: var(--gold-200);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .wish-card .wish-attendance {
+            display: inline-block;
+            margin-left: 8px;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            background: rgba(212,175,55,0.15);
+            color: var(--gold-400);
+            letter-spacing: 0.05em;
+        }
+
+        .wish-card .wish-time {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+            letter-spacing: 0.05em;
+        }
+
+        /* ============================================
+           GIFT SECTION - REFINED
+           ============================================ */
+        .gift-container {
+            max-width: 580px;
+            margin: 0 auto;
+            background: var(--glass-4);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            padding: clamp(30px, 5vw, 55px) clamp(25px, 4vw, 50px);
+            border-radius: clamp(50px, 8vw, 75px);
+            border: 1px solid var(--border-soft);
+            box-shadow: var(--shadow-card);
+        }
+
+        .gift-icon {
+            font-size: clamp(45px, 7vw, 65px);
+            color: var(--gold-500);
+            display: block;
+            margin-bottom: 18px;
+            animation: floatGentle 3s ease-in-out infinite;
+        }
+
+        .account-number {
+            background: rgba(5, 3, 2, 0.7);
+            padding: clamp(14px, 2vw, 20px);
+            border-radius: 50px;
+            margin: 25px 0;
+            font-size: clamp(1rem, 1.8vw, 1.4rem);
+            letter-spacing: 0.2em;
+            color: var(--gold-200);
+            border: 1px solid var(--border-subtle);
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .account-number:hover {
+            border-color: var(--border-medium);
+            box-shadow: var(--shadow-glow-gold);
+            background: rgba(10, 7, 5, 0.8);
+        }
+
+        .copy-tooltip {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .account-number:hover .copy-tooltip {
+            opacity: 1;
+        }
+
+        .divider {
+            margin: 35px 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-soft), transparent);
+        }
+
+        .btn-copy {
+            display: inline-block;
+            margin-top: 18px;
+            background: linear-gradient(135deg, var(--gold-700), var(--gold-500));
+            color: var(--dark-abyss);
+            padding: clamp(10px, 1.5vw, 14px) clamp(25px, 3.5vw, 38px);
+            border-radius: 50px;
+            border: none;
+            font-size: clamp(11px, 1.2vw, 13px);
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            cursor: pointer;
+            transition: all 0.5s var(--ease-out-expo);
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .btn-copy:hover {
+            transform: scale(1.06);
+            box-shadow: 0 12px 35px rgba(212,175,55,0.4);
+        }
+
+        /* ============================================
+           FLOATING CONTROLS
+           ============================================ */
+        .floating-controls {
+            position: fixed;
+            bottom: clamp(25px, 4vw, 40px);
+            right: clamp(15px, 3vw, 30px);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 9999;
+        }
+
+        .ctrl-btn {
+            width: clamp(48px, 6vw, 60px);
+            height: clamp(48px, 6vw, 60px);
+            border-radius: 50%;
+            border: 2px solid var(--border-soft);
+            cursor: pointer;
+            transition: all 0.4s var(--ease-out-expo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(18px, 2.5vw, 24px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .ctrl-btn.music-btn {
+            background: radial-gradient(circle, var(--gold-500), var(--gold-700));
+            color: var(--dark-abyss);
+            animation: btnPulse 3s ease-in-out infinite;
+        }
+
+        .ctrl-btn.scroll-btn {
+            background: linear-gradient(135deg, var(--gold-700), var(--gold-500));
+            color: var(--dark-abyss);
+        }
+
+        .ctrl-btn.scroll-btn.active {
+            background: linear-gradient(135deg, var(--gold-800), var(--gold-600));
+            transform: rotate(180deg);
+        }
+
+        .ctrl-btn:hover {
+            transform: scale(1.12);
+            box-shadow: 0 15px 40px rgba(212,175,55,0.4);
+            border-color: var(--border-prominent);
+        }
+
+        .ctrl-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* ============================================
+           TOAST NOTIFICATION
+           ============================================ */
+        .toast {
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-120px);
+            background: var(--glass-5);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            color: var(--gold-200);
+            padding: 16px 35px;
+            border-radius: 50px;
+            border: 1px solid var(--border-medium);
+            z-index: 10002;
+            font-size: clamp(11px, 1.3vw, 13px);
+            letter-spacing: 0.1em;
+            transition: transform 0.6s var(--ease-out-back);
+            box-shadow: var(--shadow-card);
+            font-family: 'Montserrat', sans-serif;
+            white-space: nowrap;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer-section {
+            background: linear-gradient(180deg, var(--dark-abyss), #010000);
+            padding: clamp(40px, 6vw, 60px) 20px;
+            text-align: center;
+            font-size: clamp(11px, 1.2vw, 13px);
+            border-top: 1px solid var(--border-subtle);
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .footer-quote {
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+            font-size: clamp(1rem, 1.8vw, 1.4rem);
+            color: var(--gold-400);
+            font-style: italic;
+            margin-bottom: 20px;
+            letter-spacing: 0.03em;
+        }
+
+        .footer-hashtag {
+            color: var(--gold-500);
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            font-size: 0.85em;
+            margin: 0 8px;
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        @media (max-width: 1024px) {
+            .couple-grid { gap: 40px; }
+            .couple-card { width: 320px; }
         }
 
         @media (max-width: 768px) {
-            .hero-lux h1, #cover-page h1 { font-size: 2.5rem; }
-            .section-title-lux { font-size: 2rem; }
-            .time-lux { padding: 12px 15px; min-width: 70px; }
-            .time-lux span { font-size: 1.8rem; }
-            .section-lux { padding: 50px 15px; margin: 15px 12px; }
-            .slider-container { max-width: 350px; }
-            .card-person-lux { width: 260px; }
+            .cover-title { font-size: clamp(2.5rem, 8vw, 3.5rem); }
+            .cover-title .ampersand { font-size: 0.65em; }
+            .section-title { font-size: clamp(1.8rem, 5vw, 2.5rem); }
+            
+            .countdown-item {
+                padding: 15px 20px;
+                min-width: 65px;
+                border-radius: 25px;
+            }
+            .countdown-value { font-size: clamp(1.5rem, 4vw, 2.2rem); }
+            .countdown-label { font-size: 0.6rem; letter-spacing: 0.2em; }
+            
+            .glass-section {
+                padding: 50px 15px;
+                margin: 20px 10px;
+                border-radius: 40px;
+            }
+            
+            .event-card { width: 300px; padding: 30px 20px; }
+            .rsvp-form, .gift-container { padding: 35px 22px; border-radius: 45px; }
+            .guest-box { padding: 20px 35px; border-radius: 50px; }
+            .guest-name-display { font-size: 1.5rem; }
+            .couple-photo { width: 150px; height: 150px; }
+            .couple-name { font-size: 1.8rem; }
+            
+            .floating-controls {
+                bottom: 20px;
+                right: 12px;
+                gap: 8px;
+            }
+            .ctrl-btn {
+                width: 48px;
+                height: 48px;
+                font-size: 18px;
+            }
         }
+
+        @media (max-width: 480px) {
+            .cover-title { font-size: 2rem; }
+            .section-title { font-size: 1.6rem; }
+            .countdown-grid { gap: 8px; }
+            .countdown-item {
+                padding: 10px 12px;
+                min-width: 55px;
+                border-radius: 20px;
+            }
+            .countdown-value { font-size: 1.3rem; }
+            .countdown-label { font-size: 0.55rem; letter-spacing: 0.1em; }
+            
+            .event-card { width: 260px; }
+            .couple-card { width: 260px; padding: 25px 18px; }
+            .couple-photo { width: 130px; height: 130px; }
+            .guest-box { padding: 15px 25px; }
+            .guest-name-display { font-size: 1.3rem; }
+            .btn-open { padding: 14px 35px; font-size: 11px; }
+            
+            .floating-controls {
+                bottom: 15px;
+                right: 8px;
+                gap: 6px;
+            }
+            .ctrl-btn {
+                width: 42px;
+                height: 42px;
+                font-size: 16px;
+            }
+            
+            .account-number { font-size: 1rem; letter-spacing: 0.1em; }
+        }
+
+        /* ============================================
+           REDUCED MOTION
+           ============================================ */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            html { scroll-behavior: auto; }
+        }
+
+        /* ============================================
+           PRINT STYLES
+           ============================================ */
+        @media print {
+            body { background: white; color: black; }
+            .bg-system, #particle-canvas, .floating-controls, .toast { display: none !important; }
+            .glass-section { background: none; border: 1px solid #ccc; box-shadow: none; }
+        }
+
+        .swiper-container {
+    width: 100%;
+    max-width: 580px;
+    margin: 55px auto;
+    border-radius: 55px;
+    overflow: hidden;
+    box-shadow: 
+        0 35px 70px rgba(0,0,0,0.6),
+        0 0 0 4px var(--border-subtle);
+    transition: all 0.6s ease;
+    position: relative;
+}
+
+/* Smooth fade transition for slides */
+.swiper-slide {
+    aspect-ratio: 4 / 5;
+    position: relative;
+    overflow: hidden;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+/* Smooth hover zoom */
+.swiper-slide:hover img {
+    transform: scale(1.06);
+}
+
+/* Custom smooth pagination bullets */
+.swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.5) !important;
+    width: 10px !important;
+    height: 10px !important;
+    opacity: 0.5 !important;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--gold-500) !important;
+    opacity: 1 !important;
+    width: 32px !important;
+    border-radius: 6px !important;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+}
+
+/* Progress bar indicator */
+.gallery-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold-700), var(--gold-400), var(--gold-200));
+    z-index: 10;
+    width: 0%;
+    transition: width 0.1s linear;
+    border-radius: 0 3px 3px 0;
+}
+
+/* Navigation arrows with smooth hover */
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--gold-500) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.swiper-container:hover .swiper-button-next,
+.swiper-container:hover .swiper-button-prev {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: var(--gold-200) !important;
+    transform: scale(1.1) !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 24px !important;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Gradient overlay on slides for depth */
+.swiper-slide::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.swiper-slide:hover::after {
+    opacity: 1;
+}
+
+/* Smooth fade between slides */
+.swiper-fade .swiper-slide {
+    transition-property: opacity, transform;
+}
+
+/* Slide counter */
+.slide-counter {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    color: var(--gold-200);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    z-index: 10;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid var(--border-subtle);
+    transition: all 0.4s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .swiper-container {
+        max-width: 90%;
+        border-radius: 35px;
+    }
+    
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 18px !important;
+    }
+    
+    .slide-counter {
+        font-size: 9px;
+        padding: 4px 10px;
+    }
+}
     </style>
 </head>
 <body>
 
-    <!-- Parallax Background -->
-    <div class="parallax-bg">
-        <div class="parallax-layer" style="background-image: url('assets/fotobackground.jpeg');"></div>
-        <div class="parallax-layer" style="background-image: url('assets/foto1.jpeg');"></div>
-        <div class="parallax-layer" style="background-image: url('assets/foto2.jpeg');"></div>
-        <div class="parallax-layer" style="background-image: url('assets/foto3.jpeg');"></div>
-        <div class="parallax-layer" style="background-image: url('assets/foto4.jpeg');"></div>
-        <div class="parallax-layer" style="background-image: url('assets/foto5.jpeg');"></div>
-        <div class="parallax-layer" style="background-image: url('assets/fotowanita.jpeg');"></div>
+    <!-- Background System -->
+    <div class="bg-system">
+        <div class="bg-image-layer" style="background-image: url('assets/fotobackground.jpeg');"></div>
+        <div class="bg-image-layer" style="background-image: url('assets/foto1.jpeg');"></div>
+        <div class="bg-image-layer" style="background-image: url('assets/foto2.jpeg');"></div>
+        <div class="bg-image-layer" style="background-image: url('assets/foto3.jpeg');"></div>
+        <div class="bg-image-layer" style="background-image: url('assets/foto4.jpeg');"></div>
+        <div class="bg-image-layer" style="background-image: url('assets/foto5.jpeg');"></div>
+        <div class="bg-image-layer" style="background-image: url('assets/fotowanita.jpeg');"></div>
+        <div class="bg-gradient-overlay"></div>
+        <div class="bg-vignette"></div>
+        <div class="bg-noise"></div>
     </div>
-    <div class="bg-overlay"></div>
 
+    <!-- Particle Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Background Music -->
     <audio id="bg-music" loop preload="auto">
         <source src="assets/backsound.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- COVER -->
+    <!-- Cover Page -->
     <div id="cover-page">
-        <div class="ornament-gold">✦ ✦ ✦</div>
-        <div class="invitation-badge" style="font-size: 11px; letter-spacing: 4px;">THE WEDDING OF</div>
-        <h1>Arya <span style="font-family: 'Great Vibes';">&</span> Ulfa</h1>
-        <div class="guest-box-lux">
-            <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
-            <h2 id="guest-name">Tamu Undangan</h2>
-            <p style="font-size: 9px; margin-top: 8px;">*Mohon maaf jika ada kesalahan penulisan nama</p>
+        <div class="cover-inner">
+            <div class="ornament-row">
+                <span class="ornament-line"></span>
+                <span class="ornament-dot"></span>
+                <span class="ornament-line"></span>
+                <span class="ornament-dot"></span>
+                <span class="ornament-line"></span>
+                <span class="ornament-dot"></span>
+                <span class="ornament-line"></span>
+            </div>
+            
+            <div class="cover-badge">The Wedding Of</div>
+            
+            <h1 class="cover-title">
+                Arya <span class="ampersand">&</span> Ulfa
+            </h1>
+            
+            <div class="guest-box">
+                <div class="guest-box-inner">
+                    <p class="guest-label-text">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                    <h2 class="guest-name-display" id="guest-name">Tamu Undangan</h2>
+                    <p class="guest-note">*Mohon maaf apabila terdapat kekeliruan penulisan nama</p>
+                </div>
+            </div>
+            
+            <button class="btn-open" onclick="openInvitation()" aria-label="Buka Undangan">
+                <i class="fas fa-envelope-open-text"></i>&nbsp; Buka Undangan
+            </button>
+            
+            <div class="ornament-row">
+                <span class="ornament-line"></span>
+                <span class="ornament-dot"></span>
+                <span class="ornament-line"></span>
+                <span class="ornament-dot"></span>
+                <span class="ornament-line"></span>
+                <span class="ornament-dot"></span>
+                <span class="ornament-line"></span>
+            </div>
         </div>
-        <button class="btn-open-lux" onclick="openInvitation()">BUKA UNDANGAN <i class="fas fa-arrow-right"></i></button>
     </div>
 
-    <button id="music-btn-lux" onclick="toggleMusic()"><i class="fas fa-music"></i></button>
-    <button class="auto-scroll-btn" id="autoScrollBtn" onclick="toggleAutoScroll()"><i class="fas fa-play"></i></button>
+    <!-- Floating Controls -->
+    <div class="floating-controls">
+        <button class="ctrl-btn music-btn" id="music-btn" onclick="toggleMusic()" aria-label="Musik" title="Musik">
+            <i class="fas fa-music"></i>
+        </button>
+        <button class="ctrl-btn scroll-btn" id="scroll-btn" onclick="toggleAutoScroll()" aria-label="Auto Scroll" title="Auto Scroll">
+            <i class="fas fa-play"></i>
+        </button>
+    </div>
 
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Main Content -->
     <div id="main-content">
-        <!-- Hero -->
-        <section class="hero-lux" data-aos="fade-in">
-            <p class="lead floating-icon" style="letter-spacing: 4px;">SAVE THE DATE</p>
-            <h1>Arya <span class="gold-text">&</span> Ulfa</h1>
-            <p style="font-size: 18px; margin-top: 15px;"><i class="fas fa-calendar-alt"></i> 28 November 2026</p>
-            <div class="countdown-lux" style="margin-top: 35px;">
-                <div class="time-lux"><span id="days">00</span><br>Hari</div>
-                <div class="time-lux"><span id="hours">00</span><br>Jam</div>
-                <div class="time-lux"><span id="minutes">00</span><br>Menit</div>
-                <div class="time-lux"><span id="seconds">00</span><br>Detik</div>
-            </div>
-        </section>
-
-        <!-- Ayat & Mempelai -->
-        <section class="section-lux" data-aos="fade-up">
-            <p style="max-width: 650px; margin: 0 auto 30px; font-style: italic; color: #c4bcab;">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya..." <br> (Q.S Ar Rum: 21)</p>
-            <h2 class="section-title-lux">Pasangan <span class="gold-text">Mempelai</span></h2>
-            <div class="couple-lux">
-                <div class="card-person-lux" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="photo-frame"><img src="assets/fotopria.jpeg" alt="Arya"></div>
-                    <h3>Arya Wijaya</h3>
-                    <p>Putra dari Bpk. Gusmidiansyah & Ibu Sutriana</p>
+        
+        <!-- Hero Section -->
+        <section class="hero-section" data-aos="fade-in" data-aos-duration="1500">
+            <p class="section-eyebrow">
+                <i class="fas fa-gem"></i> Save The Date <i class="fas fa-gem"></i>
+            </p>
+            <h1 class="hero-title">
+                <span class="gold-text">Arya</span> 
+                <span class="font-script" style="color: var(--gold-400); font-size: 0.7em; display: inline-block; margin: 0 0.15em;">&</span> 
+                <span class="gold-text">Ulfa</span>
+            </h1>
+            <p class="hero-date-text">
+                <i class="fas fa-calendar-alt"></i> 8 - 12 Juli 2026 
+                <span class="separator">|</span>
+                <i class="fas fa-clock"></i> 08.00 WIB
+            </p>
+            
+            <!-- Countdown -->
+            <div class="countdown-grid">
+                <div class="countdown-item" data-aos="zoom-in" data-aos-delay="100">
+                    <span class="countdown-value" id="days">00</span>
+                    <span class="countdown-label">Hari</span>
                 </div>
-                <div class="card-person-lux" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="photo-frame"><img src="assets/fotowanita.jpeg" alt="Ulfa"></div>
-                    <h3>Ulfa Safitri</h3>
-                    <p>Putri dari Bpk. Adi Nugroho & Ibu Sari Ayu</p>
+                <div class="countdown-item" data-aos="zoom-in" data-aos-delay="200">
+                    <span class="countdown-value" id="hours">00</span>
+                    <span class="countdown-label">Jam</span>
                 </div>
-            </div>
-        </section>
-
-        <!-- Event dengan Google Maps ke Masjid Istiqlal -->
-        <section class="section-lux" data-aos="fade-up">
-            <h2 class="section-title-lux">Wedding <span class="gold-text">Event</span></h2>
-            <div class="event-grid-lux">
-                <div class="event-card-gold" data-aos="flip-left">
-                    <i class="fas fa-mosque" style="font-size: 42px; color: #d4af37;"></i>
-                    <h3 style="font-size: 26px; margin: 15px 0;">Akad Nikah</h3>
-                    <p>Sabtu, 28 November 2026 | 08.00 WIB</p>
-                    <p><i class="fas fa-location-dot"></i> Masjid Istiqlal, Jakarta</p>
-                    <a href="https://maps.google.com/?q=Masjid+Istiqlal+Jakarta" target="_blank" class="btn-map-lux"><i class="fas fa-map-marker-alt"></i> Google Maps</a>
+                <div class="countdown-item" data-aos="zoom-in" data-aos-delay="300">
+                    <span class="countdown-value" id="minutes">00</span>
+                    <span class="countdown-label">Menit</span>
                 </div>
-                <div class="event-card-gold" data-aos="flip-right">
-                    <i class="fas fa-champagne-glasses" style="font-size: 42px; color: #d4af37;"></i>
-                    <h3 style="font-size: 26px; margin: 15px 0;">Resepsi</h3>
-                    <p>Sabtu, 28 November 2026 | 11.00 WIB</p>
-                    <p><i class="fas fa-building"></i> Golden Hall, The Palace</p>
-                    <a href="https://maps.google.com/?q=Golden+Hall+Jakarta" target="_blank" class="btn-map-lux"><i class="fas fa-map-marker-alt"></i> Google Maps</a>
+                <div class="countdown-item" data-aos="zoom-in" data-aos-delay="400">
+                    <span class="countdown-value" id="seconds">00</span>
+                    <span class="countdown-label">Detik</span>
                 </div>
             </div>
         </section>
 
-        <!-- Gallery Slider -->
-        <div class="gallery-lux" data-aos="fade-up">
-            <h2 class="section-title-lux" style="color: #d4af37;">Our <span style="color: #e8e2d4;">Moments</span></h2>
-            <p style="color: #c4bcab; margin-bottom: 20px;">Momen terindah dalam perjalanan cinta kami</p>
-            <div class="slider-container">
-                <div class="slider-wrapper">
-                    <div class="slider-slide active"><img src="assets/foto1.jpeg" alt="Moment 1"></div>
-                    <div class="slider-slide"><img src="assets/foto2.jpeg" alt="Moment 2"></div>
-                    <div class="slider-slide"><img src="assets/foto3.jpeg" alt="Moment 3"></div>
-                    <div class="slider-slide"><img src="assets/foto4.jpeg" alt="Moment 4"></div>
-                    <div class="slider-slide"><img src="assets/foto5.jpeg" alt="Moment 5"></div>
+        <!-- Quote & Couple Section -->
+        <div class="glass-section" data-aos="fade-up" data-aos-duration="1200">
+            <p class="section-eyebrow">Bismillahirrahmanirrahim</p>
+            <blockquote class="quote-block">
+                "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan dari jenismu sendiri, 
+                supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang. 
+                Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."
+                <div class="quote-source">— Q.S Ar Rum: 21</div>
+            </blockquote>
+            
+            <h2 class="section-title">Pasangan Mempelai</h2>
+            
+            <div class="couple-grid">
+                <!-- Groom -->
+                <div class="couple-card" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="couple-photo">
+                        <img src="assets/fotopria.jpeg" alt="Arya Wijaya" loading="lazy">
+                    </div>
+                    <h3 class="couple-name gold-text-static">Arya Syachrian Al-Amin</h3>
+                    <p class="couple-parents">
+                        Anak Pertama dari<br>
+                        <strong>Bpk. Gusmidiansyah</strong><br>
+                        &<br>
+                        <strong>Ibu Sutriana</strong>
+                    </p>
+                    <div class="couple-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
-            </div>
-            <div class="slider-dots">
-                <div class="dot active" data-slide="0"></div>
-                <div class="dot" data-slide="1"></div>
-                <div class="dot" data-slide="2"></div>
-                <div class="dot" data-slide="3"></div>
-                <div class="dot" data-slide="4"></div>
+                
+                <!-- Bride -->
+                <div class="couple-card" data-aos="zoom-in" data-aos-delay="350">
+                    <div class="couple-photo">
+                        <img src="assets/fotowanita.jpeg" alt="Kirana Maharani" loading="lazy">
+                    </div>
+                    <h3 class="couple-name gold-text-static">Ulfa Safitri</h3>
+                    <p class="couple-parents">
+                        Anak Pertama dari<br>
+                        <strong>Bpk. Litartanto</strong><br>
+                        &<br>
+                        <strong>Ibu Lela Fitriani</strong>
+                    </p>
+                    <div class="couple-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Wedding Gift -->
-        <section class="section-lux" data-aos="fade-up">
-            <h2 class="section-title-lux">Wedding <span class="gold-text">Gift</span></h2>
-            <p style="max-width: 500px; margin: 0 auto 25px; color: #c4bcab;">Doa restu Anda merupakan karunia yang sangat berarti. Namun jika memberi adalah ungkapan kasih, Anda dapat memberi kado secara cashless.</p>
-            <div class="gift-card-lux">
-                <i class="fas fa-gift floating-icon" style="font-size: 48px; color: #d4af37;"></i>
-                <h3>Rekening & Kirim Hadiah</h3>
-                <div class="rekening-number"><i class="fas fa-university"></i> BNI 1620120281</div>
-                <p>a.n Arya Syachrian</p>
-                <button class="btn-gold" onclick="copyText('1234567890123456')"><i class="fas fa-copy"></i> Salin No. Rekening</button>
-                <hr style="margin: 20px 0; border-color: rgba(212,175,55,0.2);">
-                <p><strong><i class="fas fa-box"></i> Kirim Hadiah Fisik</strong></p>
-                <p style="font-size: 14px;">Jl. Kenanga No. 21, Kota Damai, Jawa Barat</p>
-                <button class="btn-gold" onclick="copyText('Jl. Kenanga No. 21, Kota Damai, Jawa Barat')" style="margin-top: 12px;"><i class="fas fa-copy"></i> Salin Alamat</button>
+        <!-- Events Section -->
+        <div class="glass-section" data-aos="fade-up" data-aos-duration="1200">
+            <p class="section-eyebrow">You Are Cordially Invited To</p>
+            <h2 class="section-title">Wedding Events</h2>
+            
+            <div class="event-grid">
+                <!-- Akad Nikah -->
+                <div class="event-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="event-icon"><i class="fas fa-mosque"></i></div>
+                    <h3 class="event-title">Akad Nikah</h3>
+                    <p class="event-date">Rabu, 8 Juli 2026</p>
+                    <p class="event-detail-row"><i class="far fa-clock"></i> 15.00 - Selesai WIB</p>
+                    <p class="event-detail-row"><i class="fas fa-map-marker-alt"></i> Kediaman Mempelai Wanita</p>
+                    <p class="event-address">Jl. Pagar Gunung, Kec. Padang Guci Hulu, Kabupaten Kaur, Bengkulu 38955</p>
+                    <a href="https://maps.app.goo.gl/X1Ad95NwXNVbWtKZ9" target="_blank" rel="noopener" class="btn-event">
+                        <i class="fas fa-map-pin"></i> Lihat Lokasi
+                    </a>
+                </div>
+                
+                <!-- Resepsi I -->
+                <div class="event-card" data-aos="flip-up" data-aos-delay="250">
+                    <div class="event-icon"><i class="fas fa-glass-cheers"></i></div>
+                    <h3 class="event-title">Resepsi I</h3>
+                    <p class="event-date">9 Juli 2026</p>
+                    <p class="event-detail-row"><i class="far fa-clock"></i> 11.00 - 16.00 WIB</p>
+                    <p class="event-detail-row"><i class="fas fa-map-marker-alt"></i> Kediaman Mempelai Wanita</p>
+                    <p class="event-address">Jl. Pagar Gunung, Kec. Padang Guci Hulu, Kabupaten Kaur, Bengkulu 38955</p>
+                    <a href="https://maps.app.goo.gl/X1Ad95NwXNVbWtKZ9" target="_blank" rel="noopener" class="btn-event">
+                        <i class="fas fa-map-pin"></i> Lihat Lokasi
+                    </a>
+                </div>
+                
+                <!-- Resepsi II -->
+                <div class="event-card" data-aos="flip-right" data-aos-delay="400">
+                    <div class="event-icon"><i class="fas fa-champagne-glasses"></i></div>
+                    <h3 class="event-title">Resepsi II</h3>
+                    <p class="event-date">11 - 12 Juli 2026</p>
+                    <p class="event-detail-row"><i class="far fa-clock"></i> 08.00 - 15.00 WIB</p>
+                    <p class="event-detail-row"><i class="fas fa-map-marker-alt"></i> Kediaman Mempelai Pria</p>
+                    <p class="event-address">Jl.Simpang Tiga, Kec. Kaur Utara, Kabupaten Kaur, Bengkulu 38955</p>
+                    <a href="hhttps://maps.app.goo.gl/g6YqpJWfqKkDXvBj6" target="_blank" rel="noopener" class="btn-event">
+                        <i class="fas fa-map-pin"></i> Lihat Lokasi
+                    </a>
+                </div>
             </div>
-        </section>
+        </div>
 
-        <!-- RSVP + Konfirmasi Kehadiran + WhatsApp -->
-        <section class="section-lux" data-aos="fade-up">
-            <h2 class="section-title-lux">Konfirmasi <span class="gold-text">Kehadiran</span></h2>
-            <p style="color: #c4bcab; margin-bottom: 20px;">Isi formulir di bawah untuk konfirmasi kehadiran dan berikan ucapan terbaik untuk kedua mempelai</p>
+        <!-- Gallery Section -->
+        <!-- Gallery Section -->
+<div class="gallery-section" data-aos="fade-up" data-aos-duration="1400">
+    <p class="section-eyebrow">Love Story</p>
+    <h2 class="section-title" style="color: var(--gold-400);">Our Precious Moments</h2>
+    <p style="color: var(--text-tertiary); margin-bottom: 25px; font-style: italic; font-size: clamp(0.9rem, 1.3vw, 1.05rem);">
+        "Setiap detik bersamamu adalah kenangan yang terukir abadi"
+    </p>
+    
+    <div class="swiper-container-wrapper" style="position: relative;">
+        <div class="swiper-container swiper gallery-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="assets/foto1.jpeg" alt="Moment 1" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/foto2.jpeg" alt="Moment 2" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/foto3.jpeg" alt="Moment 3" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/foto4.jpeg" alt="Moment 4" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/foto5.jpeg" alt="Moment 5" loading="lazy">
+                </div>
+            </div>
+            <!-- Progress Bar -->
+            <div class="gallery-progress" id="galleryProgress"></div>
+            <!-- Slide Counter -->
+            <div class="slide-counter" id="slideCounter">1 / 5</div>
+            <!-- Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</div>
+
+        <!-- RSVP Section -->
+        <div class="glass-section" data-aos="fade-up" data-aos-duration="1200">
+            <p class="section-eyebrow">Konfirmasi</p>
+            <h2 class="section-title">Kehadiran & Ucapan</h2>
+            <p style="margin-bottom: 35px; color: var(--text-secondary); max-width: 600px; margin-left: auto; margin-right: auto;">
+                Merupakan suatu kehormatan dan kebahagiaan apabila Bapak/Ibu/Saudara/i berkenan hadir memberikan doa restu.
+            </p>
             
             <div class="rsvp-form">
                 <div class="form-group">
-                    <label><i class="fas fa-user"></i> Nama Lengkap</label>
-                    <input type="text" id="rsvpName" placeholder="Contoh: Bapak/Ibu/Saudara/i">
+                    <label class="form-label" for="rsvpName"><i class="fas fa-user"></i> Nama Lengkap</label>
+                    <input type="text" id="rsvpName" class="form-input" placeholder="Tuliskan nama lengkap Anda..." required>
                 </div>
+                
                 <div class="form-group">
-                    <label><i class="fas fa-calendar-check"></i> Status Kehadiran</label>
-                    <select id="rsvpAttend">
+                    <label class="form-label" for="rsvpAttend"><i class="fas fa-check-circle"></i> Konfirmasi Kehadiran</label>
+                    <select id="rsvpAttend" class="form-select">
                         <option value="Hadir">✅ Hadir / InsyaAllah datang</option>
-                        <option value="Tidak Hadir">❌ Berhalangan hadir</option>
+                        <option value="Tidak Hadir">❌ Tidak dapat hadir, doa terbaik</option>
                         <option value="Ragu">🤔 Belum dapat memastikan</option>
                     </select>
                 </div>
+                
                 <div class="form-group">
-                    <label><i class="fas fa-comment"></i> Ucapan & Doa</label>
-                    <textarea id="rsvpMessage" rows="3" placeholder="Tuliskan ucapan selamat, doa, atau kesan untuk kedua mempelai..."></textarea>
+                    <label class="form-label" for="rsvpMessage"><i class="fas fa-heart"></i> Ucapan & Doa</label>
+                    <textarea id="rsvpMessage" class="form-textarea" rows="4" placeholder="Tuliskan ucapan dan doa terbaik untuk kedua mempelai..."></textarea>
                 </div>
-                <button class="btn-submit" onclick="sendConfirmation()"><i class="fab fa-whatsapp"></i> Kirim Konfirmasi & Ucapan</button>
+                
+                <button class="btn-submit" onclick="addWish()">
+                    <i class="fas fa-paper-plane"></i> Kirim Ucapan & Konfirmasi
+                </button>
             </div>
-
-            <!-- Daftar Ucapan -->
-            <h3 style="margin-top: 50px; color: #d4af37;"><i class="fas fa-heart"></i> Ucapan & Doa dari Tamu</h3>
-            <div id="wishesContainer" class="wishes-list">
-                <div class="wish-item">
-                    <div class="wish-name"><i class="fas fa-user-circle"></i> Ibu Siti Rahayu</div>
-                    <div class="wish-message">"Selamat menempuh hidup baru, semoga menjadi keluarga sakinah mawaddah warahmah. Barakallah!"</div>
-                    <div class="wish-status">✅ Hadir</div>
+            
+            <!-- Wishes -->
+            <h3 class="wishes-title"><i class="fas fa-heart" style="color: var(--gold-500);"></i> Ucapan & Doa dari Para Tamu</h3>
+            <div id="wishesContainer" class="wishes-container">
+                <div class="wish-card">
+                    <span class="wish-name">❤️ Egy</span>
+                    <span class="wish-attendance">Hadir</span><br>
+                    "Selamat menempuh hidup baru, semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Aamiin."
+                    <div class="wish-time">8 Maret 2026</div>
                 </div>
-                <div class="wish-item">
-                    <div class="wish-name"><i class="fas fa-user-circle"></i> Bapak Ahmad Fauzi</div>
-                    <div class="wish-message">"Semoga selalu diberkahi Allah dalam setiap langkah. Aamiin."</div>
-                    <div class="wish-status">✅ Hadir</div>
-                </div>
-                <div class="wish-item">
-                    <div class="wish-name"><i class="fas fa-user-circle"></i> Siti Nurjanah</div>
-                    <div class="wish-message">"Wahh cantik banget undangannya! Semoga langgeng selalu ya 🎉"</div>
-                    <div class="wish-status">✅ Hadir</div>
+    
+                <div class="wish-card">
+                    <span class="wish-name">🤵 Gusril</span>
+                    <span class="wish-attendance">Hadir</span><br>
+                    "Barakallah, semoga rumah tangganya penuh berkah, cinta, dan kebahagiaan."
+                    <div class="wish-time">10 Maret 2026</div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <footer>
-            <p>Atas kehadiran dan doa restu dari Bapak/Ibu/Saudara/I sekalian, kami mengucapkan Terima Kasih.</p>
-            <p>Wassalamualaikum Wr. Wb.</p>
-            <p style="margin-top: 15px;">© 2026 Arya & Ulfa | <span class="gold-text">#ElegantWedding</span></p>
+        <!-- Gift Section -->
+        <div class="glass-section" data-aos="fade-up" data-aos-duration="1200">
+            <p class="section-eyebrow">Wedding Gift</p>
+            <h2 class="section-title">Kirim Hadiah</h2>
+            <p style="max-width: 600px; margin: 0 auto 30px; color: var(--text-secondary); line-height: 1.8;">
+                Doa restu Anda adalah karunia terindah. Namun jika memberi adalah ungkapan kasih, 
+                Anda dapat memberikan kado secara <em>cashless</em> atau mengirimkan hadiah ke alamat tertera.
+            </p>
+            
+            <div class="gift-container">
+                <i class="fas fa-gift gift-icon"></i>
+                <h3 style="color: var(--gold-200); font-size: clamp(1.4rem, 2.2vw, 1.8rem); font-family: 'Cormorant Garamond', serif; margin-bottom: 10px;">
+                    Transfer Digital
+                </h3>
+                
+                <div class="account-number" onclick="copyToClipboard('1234567890123456')" title="Klik untuk menyalin nomor rekening">
+                    1845790556
+                    <span class="copy-tooltip">klik untuk salin</span>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                    a.n <strong>Algedian</strong>
+                </p>
+                <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 5px;">
+                    Bank BNI
+                </p>
+                
+                <button class="btn-copy" onclick="copyToClipboard('1234567890123456')">
+                    <i class="fas fa-copy"></i> Salin Nomor Rekening
+                </button>
+                
+                <hr class="divider">
+                
+                <h4 style="color: var(--gold-200); font-size: 1.2rem; font-family: 'Cormorant Garamond', serif;">
+                    <i class="fas fa-box-open"></i> Hadiah Fisik
+                </h4>
+                <p style="color: var(--text-secondary); margin-top: 12px; line-height: 1.8; font-size: 0.9rem;">
+                    Jl. Simpang Tiga, Kec. Kaur Utara, Kab.Kaur, Bengkulu<br>
+                    <span style="font-size: 0.75rem; color: var(--text-muted);">Kode Pos: 38955</span>
+                </p>
+                
+                <button class="btn-copy" onclick="copyToClipboard('Jl. Kenanga No. 10, Kel. Sentosa, Kec. Bahagia, Kota Arya')">
+                    <i class="fas fa-copy"></i> Salin Alamat
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer-section">
+            <p class="footer-quote">
+                "Dan semoga cinta yang menyatukan kami hari ini, tumbuh abadi selamanya."
+            </p>
+            <p style="margin: 15px 0;">
+                Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i sekalian,<br>
+                kami mengucapkan terima kasih yang sebesar-besarnya.
+            </p>
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold-400);">
+                Wassalamualaikum Warahmatullahi Wabarakatuh
+            </p>
+            <p style="margin-top: 25px; font-size: 0.75rem; color: var(--text-muted);">
+                © 2026 Arya & Ulfa — 
+                <span class="footer-hashtag">#AryaUlfaEverlasting</span>
+                <span class="footer-hashtag">#EgyStudio</span>
+            </p>
         </footer>
+        
     </div>
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
     <script>
-        AOS.init({ duration: 800, once: false, mirror: true, offset: 50 });
-        
-        // Nama Tamu dari URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const guestParam = urlParams.get('to');
-        document.getElementById('guest-name').innerHTML = guestParam ? decodeURIComponent(guestParam) : "Keluarga & Sahabat";
-        
-        // Nomor WhatsApp tujuan (ganti dengan nomor yang diinginkan)
-        const WHATSAPP_NUMBER = "6285150749712"; // Ganti dengan nomor WhatsApp pemilik acara
-        
-        // Load ucapan dari localStorage
-        function loadWishes() {
-            const saved = localStorage.getItem('weddingWishes');
-            if (saved) {
-                const wishes = JSON.parse(saved);
-                const container = document.getElementById('wishesContainer');
-                container.innerHTML = '';
-                wishes.forEach(wish => {
-                    addWishToDOM(wish.name, wish.message, wish.status);
-                });
-            }
-        }
-        
-        function addWishToDOM(name, message, status) {
-            const container = document.getElementById('wishesContainer');
-            const statusText = status === 'Hadir' ? '✅ Hadir' : (status === 'Tidak Hadir' ? '❌ Tidak Hadir' : '🤔 Belum Konfirmasi');
-            const statusIcon = status === 'Hadir' ? '✅' : (status === 'Tidak Hadir' ? '❌' : '🤔');
-            const wishHtml = `
-                <div class="wish-item">
-                    <div class="wish-name"><i class="fas fa-user-circle"></i> ${escapeHtml(name)}</div>
-                    <div class="wish-message">"${escapeHtml(message)}"</div>
-                    <div class="wish-status">${statusIcon} ${statusText}</div>
-                </div>
-            `;
-            container.insertAdjacentHTML('afterbegin', wishHtml);
-        }
-        
-        function saveWishToStorage(name, message, status) {
-            const saved = localStorage.getItem('weddingWishes');
-            let wishes = saved ? JSON.parse(saved) : [];
-            wishes.unshift({ name, message, status, date: new Date().toISOString() });
-            if (wishes.length > 30) wishes = wishes.slice(0, 30);
-            localStorage.setItem('weddingWishes', JSON.stringify(wishes));
-        }
-        
-        function escapeHtml(str) {
-            if (!str) return '';
-            return str.replace(/[&<>]/g, function(m) {
-                if (m === '&') return '&amp;';
-                if (m === '<') return '&lt;';
-                if (m === '>') return '&gt;';
-                return m;
-            }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
-                return c;
-            });
-        }
-        
-        // Fungsi Kirim Konfirmasi ke WhatsApp & tampil di website
-        function sendConfirmation() {
-            const name = document.getElementById('rsvpName').value.trim();
-            const attendance = document.getElementById('rsvpAttend').value;
-            const message = document.getElementById('rsvpMessage').value.trim();
-            
-            if (!name) {
-                alert("❌ Silakan isi nama Anda terlebih dahulu!");
-                return;
-            }
-            
-            const statusText = attendance === 'Hadir' ? 'Hadir' : (attendance === 'Tidak Hadir' ? 'Tidak Hadir' : 'Belum dapat memastikan');
-            const finalMessage = message || (attendance === 'Hadir' ? 'Semoga acaranya berjalan lancar dan bahagia!' : 'Doa terbaik untuk kedua mempelai.');
-            
-            // Buat pesan WhatsApp
-            const waMessage = `*KONFIRMASI UNDANGAN PERNIKAHAN*%0A%0A*Nama:* ${encodeURIComponent(name)}%0A*Status:* ${encodeURIComponent(statusText)}%0A*Ucapan:* ${encodeURIComponent(finalMessage)}%0A%0ATerima kasih atas konfirmasinya.`;
-            const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${waMessage}`;
-            
-            // Simpan ke localStorage & tampilkan di website
-            saveWishToStorage(name, finalMessage, attendance);
-            addWishToDOM(name, finalMessage, attendance);
-            
-            // Reset form
-            document.getElementById('rsvpName').value = '';
-            document.getElementById('rsvpMessage').value = '';
-            document.getElementById('rsvpAttend').value = 'Hadir';
-            
-            // Buka WhatsApp
-            window.open(waUrl, '_blank');
-            
-            alert("✨ Terima kasih! Konfirmasi Anda telah terkirim dan akan muncul di website.");
-        }
-        
-        // Background Parallax
-        const bgLayers = document.querySelectorAll('.parallax-layer');
-        const totalLayers = bgLayers.length;
-        let currentBgIndex = 0;
-        
-        function updateBackgroundOnScroll() {
-            const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-            let newIndex = Math.min(totalLayers - 1, Math.max(0, Math.floor(scrollPercent * totalLayers)));
-            if (newIndex !== currentBgIndex) {
-                bgLayers.forEach((layer, idx) => layer.classList.toggle('active', idx === newIndex));
-                currentBgIndex = newIndex;
-            }
-        }
-        bgLayers[0].classList.add('active');
-        window.addEventListener('scroll', updateBackgroundOnScroll);
-        
-        // Slider Otomatis
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slider-slide');
-        const dots = document.querySelectorAll('.dot');
-        const totalSlides = slides.length;
-        let autoSlideInterval;
-        
-        function showSlide(index) {
-            slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
-            dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
-            currentSlide = index;
-        }
-        
-        function nextSlide() { showSlide((currentSlide + 1) % totalSlides); }
-        function startAutoSlide() { if (autoSlideInterval) clearInterval(autoSlideInterval); autoSlideInterval = setInterval(nextSlide, 4000); }
-        function stopAutoSlide() { if (autoSlideInterval) clearInterval(autoSlideInterval); }
-        
-        dots.forEach((dot, idx) => {
-            dot.addEventListener('click', () => { stopAutoSlide(); showSlide(idx); startAutoSlide(); });
+        // ============================================
+        // AOS INITIALIZATION
+        // ============================================
+        AOS.init({ 
+            duration: 900, 
+            once: false, 
+            mirror: true, 
+            offset: 80,
+            easing: 'ease-out-cubic'
         });
         
-        const sliderContainer = document.querySelector('.slider-container');
-        if (sliderContainer) {
-            sliderContainer.addEventListener('mouseenter', stopAutoSlide);
-            sliderContainer.addEventListener('mouseleave', startAutoSlide);
-            sliderContainer.addEventListener('touchstart', stopAutoSlide);
-            sliderContainer.addEventListener('touchend', startAutoSlide);
+        // ============================================
+// SWIPER GALLERY - AUTO TRANSITION SMOOTH
+// ============================================
+const gallerySwiper = new Swiper('.gallery-swiper', {
+    loop: true,
+    effect: 'fade', // Gunakan 'fade' untuk transisi super halus
+    fadeEffect: {
+        crossFade: true // Cross-fade antar slide
+    },
+    autoplay: {
+        delay: 3500, // 3.5 detik per slide
+        disableOnInteraction: false, // Tetap autoplay setelah interaksi
+        pauseOnMouseEnter: true, // Pause saat hover
+        stopOnLastSlide: false,
+        waitForTransition: true
+    },
+    speed: 1000, // Kecepatan transisi 1 detik (sangat smooth)
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+        dynamicMainBullets: 3
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    grabCursor: true,
+    keyboard: {
+        enabled: true,
+        onlyInViewport: true
+    },
+    // Callbacks untuk progress bar dan counter
+    on: {
+        init: function() {
+            updateSlideCounter(this);
+            startProgressBar(this);
+        },
+        slideChange: function() {
+            updateSlideCounter(this);
+            resetProgressBar(this);
+        },
+        slideChangeTransitionStart: function() {
+            resetProgressBar(this);
+        },
+        autoplayTimeLeft(s, time, progress) {
+            // Update progress bar berdasarkan waktu autoplay
+            const progressBar = document.getElementById('galleryProgress');
+            if (progressBar) {
+                progressBar.style.width = (1 - progress) * 100 + '%';
+            }
         }
-        startAutoSlide();
+    }
+});
+
+// Update slide counter
+function updateSlideCounter(swiper) {
+    const counter = document.getElementById('slideCounter');
+    if (counter) {
+        const current = swiper.realIndex + 1;
+        const total = swiper.slides.length - (swiper.loopedSlides * 2); // Total tanpa duplikat loop
+        counter.textContent = `${current} / ${total}`;
+    }
+}
+
+// Reset progress bar
+function resetProgressBar(swiper) {
+    const progressBar = document.getElementById('galleryProgress');
+    if (progressBar) {
+        progressBar.style.transition = 'none';
+        progressBar.style.width = '0%';
+        // Force reflow
+        progressBar.offsetHeight;
+        progressBar.style.transition = `width ${swiper.params.autoplay.delay}ms linear`;
+        progressBar.style.width = '100%';
+    }
+}
+
+// Start progress bar animation
+function startProgressBar(swiper) {
+    const progressBar = document.getElementById('galleryProgress');
+    if (progressBar) {
+        progressBar.style.transition = `width ${swiper.params.autoplay.delay}ms linear`;
+        progressBar.style.width = '100%';
+    }
+}
+
+// Pause autoplay on hover for smoother experience
+const swiperContainer = document.querySelector('.swiper-container');
+if (swiperContainer) {
+    swiperContainer.addEventListener('mouseenter', () => {
+        gallerySwiper.autoplay.stop();
+        const progressBar = document.getElementById('galleryProgress');
+        if (progressBar) {
+            progressBar.style.transition = 'none';
+        }
+    });
+    
+    swiperContainer.addEventListener('mouseleave', () => {
+        gallerySwiper.autoplay.start();
+        resetProgressBar(gallerySwiper);
+    });
+    
+    // Touch events for mobile
+    swiperContainer.addEventListener('touchstart', () => {
+        gallerySwiper.autoplay.stop();
+    });
+    
+    swiperContainer.addEventListener('touchend', () => {
+        setTimeout(() => {
+            gallerySwiper.autoplay.start();
+            resetProgressBar(gallerySwiper);
+        }, 2000); // Resume after 2 seconds of no touch
+    });
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+        gallerySwiper.slidePrev();
+    } else if (e.key === 'ArrowRight') {
+        gallerySwiper.slideNext();
+    }
+});
         
-        // Musik
+        // ============================================
+        // GUEST NAME FROM URL PARAMETER
+        // ============================================
+        const urlParams = new URLSearchParams(window.location.search);
+        const guestParam = urlParams.get('to');
+        const guestNameElement = document.getElementById('guest-name');
+        
+        if (guestParam) {
+            guestNameElement.textContent = decodeURIComponent(guestParam);
+        }
+        
+        // ============================================
+        // BACKGROUND PARALLAX SYSTEM
+        // ============================================
+        const bgLayers = document.querySelectorAll('.bg-image-layer');
+        let currentLayerIndex = 0;
+        let previousLayerIndex = -1;
+        
+        function updateBackgroundLayers() {
+            const scrollHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = scrollHeight > 0 ? window.scrollY / scrollHeight : 0;
+            const newIndex = Math.min(bgLayers.length - 1, Math.floor(scrollPercent * bgLayers.length));
+            
+            if (newIndex !== currentLayerIndex) {
+                bgLayers.forEach(layer => {
+                    layer.classList.remove('active', 'fading');
+                });
+                
+                if (bgLayers[newIndex]) {
+                    bgLayers[newIndex].classList.add('active');
+                }
+                
+                if (previousLayerIndex >= 0 && bgLayers[previousLayerIndex] && previousLayerIndex !== newIndex) {
+                    bgLayers[previousLayerIndex].classList.add('fading');
+                }
+                
+                previousLayerIndex = currentLayerIndex;
+                currentLayerIndex = newIndex;
+            }
+            
+            // Subtle parallax movement
+            if (bgLayers[currentLayerIndex]) {
+                const offset = window.scrollY * 0.08;
+                bgLayers[currentLayerIndex].style.transform = `translateY(${offset}px)`;
+            }
+        }
+        
+        if (bgLayers.length > 0) {
+            bgLayers[0].classList.add('active');
+        }
+        
+        window.addEventListener('scroll', updateBackgroundLayers, { passive: true });
+        
+        // ============================================
+        // PARTICLE SYSTEM - GOLD DUST
+        // ============================================
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particlesArray = [];
+        let animationId;
+        
+        function resizeCanvas() { 
+            canvas.width = window.innerWidth; 
+            canvas.height = window.innerHeight; 
+        }
+        
+        class GoldParticle {
+            constructor() {
+                this.reset();
+            }
+            
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2.2 + 0.6;
+                this.speedX = (Math.random() - 0.5) * 0.35;
+                this.speedY = (Math.random() - 0.5) * 0.35;
+                this.opacity = Math.random() * 0.45 + 0.08;
+                this.opacityDelta = (Math.random() - 0.5) * 0.004;
+                this.hue = Math.random() > 0.6 ? '212, 175, 55' : '249, 224, 140';
+            }
+            
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                
+                if (this.x < -15) this.x = canvas.width + 15;
+                if (this.x > canvas.width + 15) this.x = -15;
+                if (this.y < -15) this.y = canvas.height + 15;
+                if (this.y > canvas.height + 15) this.y = -15;
+                
+                this.opacity += this.opacityDelta;
+                if (this.opacity >= 0.45 || this.opacity <= 0.08) {
+                    this.opacityDelta *= -1;
+                }
+            }
+            
+            draw() {
+                ctx.fillStyle = `rgba(${this.hue}, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                
+                if (this.size > 1.6) {
+                    ctx.fillStyle = `rgba(${this.hue}, ${this.opacity * 0.25})`;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size * 2.2, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+        }
+        
+        function initParticles() { 
+            particlesArray = []; 
+            const count = Math.min(130, Math.floor((canvas.width * canvas.height) / 7500));
+            for (let i = 0; i < count; i++) {
+                particlesArray.push(new GoldParticle()); 
+            }
+        }
+        
+        function animateParticles() { 
+            ctx.clearRect(0, 0, canvas.width, canvas.height); 
+            
+            particlesArray.forEach(p => { 
+                p.update(); 
+                p.draw(); 
+            });
+            
+            // Connection lines between nearby particles
+            for (let i = 0; i < particlesArray.length; i++) {
+                for (let j = i + 1; j < particlesArray.length; j++) {
+                    const dx = particlesArray[i].x - particlesArray[j].x;
+                    const dy = particlesArray[i].y - particlesArray[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (dist < 90) {
+                        const alpha = 0.06 * (1 - dist / 90);
+                        ctx.strokeStyle = `rgba(212, 175, 55, ${alpha})`;
+                        ctx.lineWidth = 0.4;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                        ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            
+            animationId = requestAnimationFrame(animateParticles); 
+        }
+        
+        window.addEventListener('resize', () => { 
+            resizeCanvas(); 
+            initParticles(); 
+        });
+        
+        resizeCanvas(); 
+        initParticles(); 
+        animateParticles();
+        
+        // ============================================
+        // MUSIC SYSTEM
+        // ============================================
         const music = document.getElementById('bg-music');
-        const musicBtn = document.getElementById('music-btn-lux');
-        
-        function playMusicFromStart() {
-            music.currentTime = 0;
-            music.play().then(() => {
-                musicBtn.innerHTML = '<i class="fas fa-music"></i>';
-                musicBtn.style.animation = 'pulse 2s infinite';
-            }).catch(e => console.log("Musik perlu interaksi user"));
-        }
+        const musicBtn = document.getElementById('music-btn');
+        let musicPlaying = false;
         
         function openInvitation() {
             const cover = document.getElementById('cover-page');
-            const main = document.getElementById('main-content');
-            cover.style.transform = 'translateY(-100%)';
-            cover.style.opacity = '0';
+            const mainContent = document.getElementById('main-content');
+            
+            cover.classList.add('exit');
+            document.body.style.overflow = 'auto';
+            
+            setTimeout(() => {
+                mainContent.classList.add('revealed');
+            }, 300);
+            
+            // Play music
+            if (!musicPlaying) {
+                music.play().then(() => {
+                    musicPlaying = true;
+                }).catch(() => {
+                    // Autoplay blocked
+                });
+            }
+            
+            // Refresh AOS
+            setTimeout(() => {
+                AOS.refresh();
+                window.dispatchEvent(new Event('scroll'));
+            }, 600);
+            
+            // Remove cover from DOM
             setTimeout(() => {
                 cover.style.display = 'none';
-                document.body.style.overflow = 'auto';
-                main.style.opacity = '1';
-                window.dispatchEvent(new Event('scroll'));
-            }, 1000);
-            playMusicFromStart();
+            }, 1800);
         }
         
         function toggleMusic() {
             if (music.paused) {
-                music.play();
-                musicBtn.innerHTML = '<i class="fas fa-music"></i>';
-                musicBtn.style.animation = 'pulse 2s infinite';
+                music.play().then(() => {
+                    musicPlaying = true;
+                    musicBtn.innerHTML = '<i class="fas fa-music"></i>';
+                    musicBtn.style.animation = 'btnPulse 3s ease-in-out infinite';
+                }).catch(() => {
+                    showToast('Ketuk untuk memutar musik');
+                });
             } else {
                 music.pause();
+                musicPlaying = false;
                 musicBtn.innerHTML = '<i class="fas fa-play"></i>';
                 musicBtn.style.animation = 'none';
             }
         }
         
-        function copyText(text) {
-            navigator.clipboard.writeText(text);
-            alert("✨ Berhasil disalin! Terima kasih.");
+        // ============================================
+        // TOAST NOTIFICATION
+        // ============================================
+        let toastTimeout;
+        function showToast(message, duration = 3000) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, duration);
         }
         
-        // Countdown Timer
-        const target = new Date("Nov 28, 2026 08:00:00").getTime();
-        function updateTimer() {
-            const now = new Date().getTime();
-            const dist = target - now;
-            if (dist < 0) return;
-            document.getElementById("days").innerHTML = String(Math.floor(dist / (1000*60*60*24))).padStart(2,'0');
-            document.getElementById("hours").innerHTML = String(Math.floor((dist % 86400000) / 3600000)).padStart(2,'0');
-            document.getElementById("minutes").innerHTML = String(Math.floor((dist % 3600000) / 60000)).padStart(2,'0');
-            document.getElementById("seconds").innerHTML = String(Math.floor((dist % 60000) / 1000)).padStart(2,'0');
+        // ============================================
+        // RSVP SYSTEM
+        // ============================================
+        function addWish() {
+            const nameInput = document.getElementById('rsvpName');
+            const attendSelect = document.getElementById('rsvpAttend');
+            const messageInput = document.getElementById('rsvpMessage');
+            
+            const name = nameInput.value.trim();
+            const attendance = attendSelect.value;
+            const message = messageInput.value.trim();
+            
+            if (!name) { 
+                showToast('❌ Mohon isi nama Anda terlebih dahulu');
+                nameInput.focus();
+                return; 
+            }
+            
+            const finalMessage = message || 
+                (attendance === 'Hadir' ? 'Semoga acaranya lancar dan penuh berkah! 🎉' : 
+                 'Doa terbaik untuk kedua mempelai 💝');
+            
+            const now = new Date();
+            const timeStr = now.toLocaleDateString('id-ID', { 
+                day: 'numeric', 
+                month: 'long', 
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            
+            const attendanceBadge = attendance === 'Hadir' ? 'Hadir' : 
+                                    attendance === 'Tidak Hadir' ? 'Tidak Hadir' : 'Ragu';
+            
+            const wishHTML = `
+                <div class="wish-card" style="animation: slideInRight 0.6s var(--ease-out-back);">
+                    <span class="wish-name">✨ ${escapeHTML(name)}</span>
+                    <span class="wish-attendance">${attendanceBadge}</span><br>
+                    "${escapeHTML(finalMessage)}"
+                    <div class="wish-time">${timeStr}</div>
+                </div>
+            `;
+            
+            document.getElementById('wishesContainer').insertAdjacentHTML('afterbegin', wishHTML);
+            
+            nameInput.value = '';
+            messageInput.value = '';
+            attendSelect.value = 'Hadir';
+            
+            showToast('✅ Terima kasih! Ucapan Anda telah tersampaikan.');
+            
+            document.getElementById('wishesContainer').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
         }
-        updateTimer();
-        setInterval(updateTimer, 1000);
         
-        // Auto Scroll
+        function escapeHTML(str) { 
+            if (!str) return ''; 
+            const div = document.createElement('div');
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        }
+        
+        // ============================================
+        // COPY TO CLIPBOARD
+        // ============================================
+        function copyToClipboard(text) { 
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast('✨ Berhasil disalin! Terima kasih.');
+                }).catch(() => {
+                    fallbackCopy(text);
+                });
+            } else {
+                fallbackCopy(text);
+            }
+        }
+        
+        function fallbackCopy(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            textarea.style.left = '-9999px';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                showToast('✨ Berhasil disalin! Terima kasih.');
+            } catch (err) {
+                showToast('❌ Gagal menyalin, silakan coba lagi.');
+            }
+            document.body.removeChild(textarea);
+        }
+        
+        // ============================================
+        // COUNTDOWN TIMER
+        // ============================================
+        const targetDate = new Date('2026-07-08T08:00:00+07:00').getTime();
+        
+        function updateCountdown() {
+            const now = Date.now();
+            const distance = targetDate - now;
+            
+            if (distance < 0) { 
+                ['days', 'hours', 'minutes', 'seconds'].forEach(id => {
+                    document.getElementById(id).textContent = '00';
+                });
+                return; 
+            }
+            
+            const days = Math.floor(distance / 86400000);
+            const hours = Math.floor((distance % 86400000) / 3600000);
+            const minutes = Math.floor((distance % 3600000) / 60000);
+            const seconds = Math.floor((distance % 60000) / 1000);
+            
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        // ============================================
+        // AUTO SCROLL SYSTEM
+        // ============================================
         let autoScrollInterval = null;
         let isAutoScrolling = false;
-        const autoBtn = document.getElementById('autoScrollBtn');
+        const scrollBtn = document.getElementById('scroll-btn');
         
         function startAutoScroll() {
             if (autoScrollInterval) clearInterval(autoScrollInterval);
+            
             autoScrollInterval = setInterval(() => {
                 const maxScroll = document.body.scrollHeight - window.innerHeight;
-                if (window.scrollY + 10 >= maxScroll) {
+                
+                if (window.scrollY >= maxScroll - 15) {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 } else {
-                    window.scrollBy({ top: 2, behavior: 'smooth' });
+                    window.scrollBy({ top: 2.2, behavior: 'smooth' });
                 }
-            }, 30);
-            isAutoScrolling = true;
-            autoBtn.innerHTML = '<i class="fas fa-pause"></i>';
-            autoBtn.classList.add('active');
+            }, 22);
+            
+            isAutoScrolling = true; 
+            scrollBtn.innerHTML = '<i class="fas fa-pause"></i>'; 
+            scrollBtn.classList.add('active');
+            showToast('Auto scroll aktif');
         }
         
-        function stopAutoScroll() {
-            if (autoScrollInterval) clearInterval(autoScrollInterval);
-            isAutoScrolling = false;
-            autoBtn.innerHTML = '<i class="fas fa-play"></i>';
-            autoBtn.classList.remove('active');
+        function stopAutoScroll() { 
+            if (autoScrollInterval) { 
+                clearInterval(autoScrollInterval); 
+                autoScrollInterval = null; 
+            } 
+            isAutoScrolling = false; 
+            scrollBtn.innerHTML = '<i class="fas fa-play"></i>'; 
+            scrollBtn.classList.remove('active');
         }
         
-        function toggleAutoScroll() { isAutoScrolling ? stopAutoScroll() : startAutoScroll(); }
+        function toggleAutoScroll() { 
+            isAutoScrolling ? stopAutoScroll() : startAutoScroll();
+        }
         
-        window.addEventListener('wheel', () => { if (isAutoScrolling) stopAutoScroll(); });
-        window.addEventListener('touchstart', () => { if (isAutoScrolling) stopAutoScroll(); });
+        // Stop auto scroll on user scroll/touch
+        window.addEventListener('wheel', () => { 
+            if (isAutoScrolling) stopAutoScroll(); 
+        }, { passive: true });
         
-        // Load ucapan yang tersimpan
-        loadWishes();
+        window.addEventListener('touchmove', () => { 
+            if (isAutoScrolling) stopAutoScroll(); 
+        }, { passive: true });
         
-        setTimeout(() => AOS.refresh(), 500);
+        // ============================================
+        // KEYBOARD SHORTCUTS
+        // ============================================
+        document.addEventListener('keydown', (e) => {
+            switch(e.key.toLowerCase()) {
+                case 'm':
+                    e.preventDefault();
+                    toggleMusic();
+                    break;
+                case 's':
+                    e.preventDefault();
+                    toggleAutoScroll();
+                    break;
+                case 'escape':
+                    if (isAutoScrolling) stopAutoScroll();
+                    break;
+            }
+        });
+        
+        // ============================================
+        // INITIALIZATION
+        // ============================================
+        document.body.style.overflow = 'hidden';
+        
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                AOS.refresh();
+                updateBackgroundLayers();
+            }, 500);
+        });
+        
+        // Pause particles when tab is hidden
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                cancelAnimationFrame(animationId);
+            } else {
+                animateParticles();
+            }
+        });
+        
+        // ============================================
+        // CONSOLE EASTER EGG
+        // ============================================
+        console.log(
+            '%c✨ %cUndangan Digital Premium %c✨\n%cArya & Kirana %c| %cDark Luxury Wedding %c| %cJuli 2026',
+            'color: #d4af37; font-size: 14px;',
+            'color: #f9e08c; font-size: 16px; font-weight: bold;',
+            'color: #d4af37; font-size: 14px;',
+            'color: #c9a84c; font-size: 13px;',
+            'color: #666;',
+            'color: #888; font-style: italic;',
+            'color: #666;',
+            'color: #888;'
+        );
+        console.log('%cTekan M = Musik | S = Auto Scroll | Esc = Stop Scroll', 'color: #666; font-size: 11px;');
     </script>
 </body>
 </html>
